@@ -44,8 +44,9 @@ section.secaoInicialDeApresentacao h1{
     align-self: center;
     justify-self: center;
     z-index: 3;
-    font-size: 1.9rem;
+    
 }
+
 section.secaoInicialDeApresentacao p{
     grid-area: apresentacao;
     margin-left: 20px;
@@ -71,13 +72,55 @@ section.futurasAtualizacoes{
     align-self: center;
     display: grid;
     grid-template-areas: 
-    "titulo imagem"
-    "apresentacao imagem"
+    "titulo"
+    "texto"
+    "lista"
     ;
     background-color: rgba(255, 255, 255, 0.377);
 
 }
+section.futurasAtualizacoes::before{
+    content: ''; 
+    position: absolute;
+    height: 70dvh;
+    width: 90dvw;
+    background-color: rgba(255, 255, 255, 0.377); 
+    filter: blur(5px); 
+    z-index: 0;
+    border-radius: 1em;
+}
 
+section.futurasAtualizacoes h1{
+    grid-area: titulo;
+    place-self: center;
+    align-self: end;
+    margin-bottom: 30px;
+    z-index: 2;
+}
+
+section.futurasAtualizacoes p {
+    grid-area: texto;
+    justify-self: center; 
+    height: 20px; 
+    align-self: center;
+    z-index: 2;
+}
+section.futurasAtualizacoes div.listasDeAtualizações{
+    grid-area: lista;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+    z-index: 2;
+}
+section.futurasAtualizacoes div.listasDeAtualizações ul{
+  align-self: baseline;
+}
+section.futurasAtualizacoes div.listasDeAtualizações ul li{
+    text-decoration: underline;
+    margin: 0px;
+    margin-left: 20px;
+    font-size: 1.2rem;
+}
 /*------ Seção de Download do Game ------- */
 
 
@@ -94,4 +137,15 @@ section.downloadDoGame{
     ;
     background-color: rgba(255, 255, 255, 0.377);
 
+}
+
+
+/*---- Estilizações Gerais */
+
+h1 {
+    font-size: 1.9rem;
+}
+
+p{
+    font-size: 1.2rem;
 }
