@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: math;
+}
+body{
+    background-color: #ff00bf;  
+    
+    display: grid;
+    place-items: center;
+    height: 100%;
+    border: 20px solid blueviolet;
+}
+
+
+section.secaoInicialDeApresentacao{
+    margin: 40px 0px 40px 0px;
+    border-radius: 1em;
+    height: 70dvh;
+    width: 90dvw;
+    align-self: center;
+    display: grid;
+    grid-template-areas: 
+    "titulo imagem"
+    "apresentacao imagem"
+    ;
+    background-color: rgba(255, 255, 255, 0.377);
+
+}
+
+section.secaoInicialDeApresentacao::before{
+    content: ''; 
+    position: absolute;
+    height: 70dvh;
+    width: 90dvw;
+    background-color: rgba(255, 255, 255, 0.377); 
+    filter: blur(5px); 
+    z-index: 2;
+    border-radius: 1em;
+}
+section.secaoInicialDeApresentacao h1{
+    grid-area: titulo;
+    align-self: center;
+    justify-self: center;
+    z-index: 3;
+    font-size: 1.9rem;
+}
+section.secaoInicialDeApresentacao p{
+    grid-area: apresentacao;
+    margin-left: 20px;
+    z-index: 3;
+}
+section.secaoInicialDeApresentacao img{
+    height: 400px;
+    z-index: 3;
+    grid-area: imagem;
+    margin: 15px 30px 0px 10px
+}
+
+
+
+
+/*------ Seção de Atualizações Futuras ------- */
+
+section.futurasAtualizacoes{
+    margin: 40px 0px 40px 0px;
+    border-radius: 1em;
+    height: 70dvh;
+    width: 90dvw;
+    align-self: center;
+    display: grid;
+    grid-template-areas: 
+    "titulo imagem"
+    "apresentacao imagem"
+    ;
+    background-color: rgba(255, 255, 255, 0.377);
+
+}
+
+/*------ Seção de Download do Game ------- */
+
+
+section.downloadDoGame{
+    margin: 40px 0px 40px 0px;
+    border-radius: 1em;
+    height: 70dvh;
+    width: 90dvw;
+    align-self: center;
+    display: grid;
+    grid-template-areas: 
+    "titulo imagem"
+    "apresentacao imagem"
+    ;
+    background-color: rgba(255, 255, 255, 0.377);
+
+}
