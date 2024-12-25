@@ -56,7 +56,7 @@ section.secaoInicialDeApresentacao img{
     height: 400px;
     z-index: 3;
     grid-area: imagem;
-    margin: 15px 30px 0px 10px
+    margin: 15px 30px 0px 10px;
 }
 
 
@@ -132,12 +132,57 @@ section.downloadDoGame{
     align-self: center;
     display: grid;
     grid-template-areas: 
-    "titulo imagem"
-    "apresentacao imagem"
+    "imagem titulo"
+    "imagem texto"
+    "imagem link"
     ;
     background-color: rgba(255, 255, 255, 0.377);
+    place-items: center;
 
 }
+
+section.downloadDoGame::before{
+    content: ''; 
+    position: absolute;
+    height: 70dvh;
+    width: 90dvw;
+    background-color: rgba(255, 255, 255, 0.377); 
+    filter: blur(5px); 
+    z-index: 0;
+    border-radius: 1em;
+}
+
+section.downloadDoGame img{
+    height: 400px;
+    margin: 5px 0px 0px 30px;
+    grid-area: imagem;
+    z-index: 2;
+}
+
+section.downloadDoGame h1{
+    grid-area: titulo;
+    z-index: 2;
+    align-self: end;
+}
+
+section.downloadDoGame p{
+    grid-area: texto;
+    margin-left: 40px;
+    z-index: 2;
+}
+
+section.downloadDoGame a {
+    grid-area: link;
+    z-index: 2;
+    align-self: baseline;
+}
+
+
+
+
+
+
+
 
 
 /*---- Estilizações Gerais */
