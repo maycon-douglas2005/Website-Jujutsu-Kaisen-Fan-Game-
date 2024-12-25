@@ -5,17 +5,91 @@
     font-family: math;
 }
 body{
-    background-color: #ff00bf;  
-    
+    background-color: #800020;  
     display: grid;
     place-items: center;
     height: 100%;
-    border: 20px solid blueviolet;
+    
 }
 
 
-section.secaoInicialDeApresentacao{
-    margin: 40px 0px 40px 0px;
+/*              HEADER               */
+
+header {
+    background-color: #8B008B;
+    width: 100%;
+    border-bottom: 1px solid black;
+    position: fixed;
+    top: 0;
+    z-index: 4;
+    display: grid;
+    grid-template-areas: 
+    "logo apresentacao futurasAtualizacoes download"
+    ;
+    grid-template-columns: 50% 20% 15% 15%;
+}
+
+header a{
+    display: inline-block;
+}
+
+header a.logo{
+    grid-area: logo;
+}
+
+header a.apresentacao{
+    grid-area: apresentacao;
+    align-self: center;
+}
+
+header a.futuras_atualizacoes{
+    grid-area: futurasAtualizacoes;
+    align-self: center;
+}
+header a.seçãoDeDownload{
+    grid-area: download;
+    align-self: center;
+}
+
+header a img.logo{
+    height: 90px;
+    width: 200px;
+    
+    cursor: pointer;
+}
+
+header a img.apresentacao{
+    height: 40px;
+    cursor: pointer;
+    
+   
+}
+
+header a img.futuras_atualizacoes{
+    height: 60px;
+    cursor:  pointer;
+    
+    
+}
+
+header a img.seçãoDeDownload{
+    height: 60px;
+    cursor:  pointer;
+    
+    
+}
+
+
+
+/*              MAIN               */
+
+main {
+    height: 100%;
+}
+
+
+main section.secaoInicialDeApresentacao{
+    margin: 120px 0px 40px 0px;
     border-radius: 1em;
     height: 70dvh;
     width: 90dvw;
@@ -29,7 +103,7 @@ section.secaoInicialDeApresentacao{
 
 }
 
-section.secaoInicialDeApresentacao::before{
+main section.secaoInicialDeApresentacao::before{
     content: ''; 
     position: absolute;
     height: 70dvh;
@@ -39,7 +113,7 @@ section.secaoInicialDeApresentacao::before{
     z-index: 2;
     border-radius: 1em;
 }
-section.secaoInicialDeApresentacao h1{
+main section.secaoInicialDeApresentacao h1{
     grid-area: titulo;
     align-self: center;
     justify-self: center;
@@ -47,12 +121,12 @@ section.secaoInicialDeApresentacao h1{
     
 }
 
-section.secaoInicialDeApresentacao p{
+main section.secaoInicialDeApresentacao p{
     grid-area: apresentacao;
     margin-left: 20px;
     z-index: 3;
 }
-section.secaoInicialDeApresentacao img{
+main section.secaoInicialDeApresentacao img{
     height: 400px;
     z-index: 3;
     grid-area: imagem;
@@ -64,7 +138,11 @@ section.secaoInicialDeApresentacao img{
 
 /*------ Seção de Atualizações Futuras ------- */
 
-section.futurasAtualizacoes{
+#futurasAtualizacoes{
+    position: relative;
+    bottom: 120px;
+}
+main section.futurasAtualizacoes{
     margin: 40px 0px 40px 0px;
     border-radius: 1em;
     height: 70dvh;
@@ -79,7 +157,7 @@ section.futurasAtualizacoes{
     background-color: rgba(255, 255, 255, 0.377);
 
 }
-section.futurasAtualizacoes::before{
+main section.futurasAtualizacoes::before{
     content: ''; 
     position: absolute;
     height: 70dvh;
@@ -90,7 +168,7 @@ section.futurasAtualizacoes::before{
     border-radius: 1em;
 }
 
-section.futurasAtualizacoes h1{
+main section.futurasAtualizacoes h1{
     grid-area: titulo;
     place-self: center;
     align-self: end;
@@ -98,24 +176,24 @@ section.futurasAtualizacoes h1{
     z-index: 2;
 }
 
-section.futurasAtualizacoes p {
+main section.futurasAtualizacoes p {
     grid-area: texto;
     justify-self: center; 
     height: 20px; 
     align-self: center;
     z-index: 2;
 }
-section.futurasAtualizacoes div.listasDeAtualizações{
+main section.futurasAtualizacoes div.listasDeAtualizações{
     grid-area: lista;
     display: grid;
     grid-template-columns: 50% 50%;
     place-items: center;
     z-index: 2;
 }
-section.futurasAtualizacoes div.listasDeAtualizações ul{
+main section.futurasAtualizacoes div.listasDeAtualizações ul{
   align-self: baseline;
 }
-section.futurasAtualizacoes div.listasDeAtualizações ul li{
+main section.futurasAtualizacoes div.listasDeAtualizações ul li{
     text-decoration: underline;
     margin: 0px;
     margin-left: 20px;
@@ -124,7 +202,7 @@ section.futurasAtualizacoes div.listasDeAtualizações ul li{
 /*------ Seção de Download do Game ------- */
 
 
-section.downloadDoGame{
+main section.downloadDoGame{
     margin: 40px 0px 40px 0px;
     border-radius: 1em;
     height: 70dvh;
@@ -141,7 +219,7 @@ section.downloadDoGame{
 
 }
 
-section.downloadDoGame::before{
+main section.downloadDoGame::before{
     content: ''; 
     position: absolute;
     height: 70dvh;
@@ -152,33 +230,30 @@ section.downloadDoGame::before{
     border-radius: 1em;
 }
 
-section.downloadDoGame img{
+main section.downloadDoGame img{
     height: 400px;
     margin: 5px 0px 0px 30px;
     grid-area: imagem;
     z-index: 2;
 }
 
-section.downloadDoGame h1{
+main section.downloadDoGame h1{
     grid-area: titulo;
     z-index: 2;
     align-self: end;
 }
 
-section.downloadDoGame p{
+main section.downloadDoGame p{
     grid-area: texto;
     margin-left: 40px;
     z-index: 2;
 }
 
-section.downloadDoGame a {
+main section.downloadDoGame a {
     grid-area: link;
     z-index: 2;
     align-self: baseline;
 }
-
-
-
 
 
 
