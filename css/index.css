@@ -26,9 +26,15 @@ header {
     grid-template-areas: 
     "logo apresentacao futurasAtualizacoes download"
     ;
-    grid-template-columns: 50% 20% 15% 15%;
+    grid-template-columns: 15% 30% 30% 30%;
 }
-
+header img.menu-hbg{ /* Menu para dispositivos menores */
+    display: none;
+    height: 40px;
+}
+header div.opcoesDoMenu{ /* Menu para dispositivos menores */
+    display: none;
+}
 header a{
     display: inline-block;
 }
@@ -40,15 +46,19 @@ header a.logo{
 header a.apresentacao{
     grid-area: apresentacao;
     align-self: center;
+    justify-self: end;
 }
 
 header a.futuras_atualizacoes{
     grid-area: futurasAtualizacoes;
     align-self: center;
+    justify-self: center;
 }
 header a.seçãoDeDownload{
     grid-area: download;
     align-self: center;
+    justify-self: baseline;
+   
 }
 
 header a img.logo{
@@ -88,6 +98,8 @@ main {
 }
 
 
+/*------ Seção de Apresentação ------- */
+
 main section.secaoInicialDeApresentacao{
     margin: 120px 0px 40px 0px;
     border-radius: 1em;
@@ -118,6 +130,7 @@ main section.secaoInicialDeApresentacao h1{
     align-self: center;
     justify-self: center;
     z-index: 3;
+    margin: 0px 20px 0px 30px;
     
 }
 
@@ -131,6 +144,7 @@ main section.secaoInicialDeApresentacao img{
     z-index: 3;
     grid-area: imagem;
     margin: 15px 30px 0px 10px;
+    align-self: center;
 }
 
 
@@ -180,7 +194,7 @@ main section.futurasAtualizacoes p {
     grid-area: texto;
     justify-self: center; 
     height: 20px; 
-    align-self: center;
+    align-self: baseline;
     z-index: 2;
 }
 main section.futurasAtualizacoes div.listasDeAtualizações{
@@ -256,10 +270,6 @@ main section.downloadDoGame a {
 }
 
 
-
-
-
-
 /*---- Estilizações Gerais */
 
 h1 {
@@ -268,4 +278,309 @@ h1 {
 
 p{
     font-size: 1.2rem;
+}
+
+
+
+
+
+
+/*               MEDIA QUERIES            */
+
+@media only screen and (max-width: 1056px){
+
+
+
+    /*------ Seção de Apresentação ------- */
+
+    main section.secaoInicialDeApresentacao{
+        margin: 120px 0px 40px 0px;
+        border-radius: 1em;
+        height: 110dvh;
+        width: 90dvw;
+        align-self: center;
+        display: grid;
+        grid-template-areas: 
+        "titulo"
+        "imagem"
+        "apresentacao"
+        ;
+        background-color: rgba(255, 255, 255, 0.377);
+    
+    }
+    
+    main section.secaoInicialDeApresentacao::before{
+        content: ''; 
+        position: absolute;
+        height: 110dvh;
+        width: 90dvw;
+        background-color: rgba(255, 255, 255, 0.377); 
+        filter: blur(5px); 
+        z-index: 2;
+        border-radius: 1em;
+    }
+    main section.secaoInicialDeApresentacao img{
+        height: 400px;
+        z-index: 3;
+        grid-area: imagem;
+        margin: 15px 0px 0px 10px;
+        justify-self: center
+    }
+
+
+
+
+
+    /*------ Seção de Download do Game ------- */
+
+
+main section.downloadDoGame{
+    margin: 40px 0px 40px 0px;
+    border-radius: 1em;
+    height: 110dvh;
+    width: 90dvw;
+    align-self: center;
+    display: grid;
+    grid-template-areas: 
+    "titulo"
+    "imagem"
+    "texto"
+    "link"
+    ;
+    background-color: rgba(255, 255, 255, 0.377);
+    place-items: center;
+
+}
+
+main section.downloadDoGame::before{
+    content: ''; 
+    position: absolute;
+    height: 110dvh;
+    width: 90dvw;
+    background-color: rgba(255, 255, 255, 0.377); 
+    filter: blur(5px); 
+    z-index: 0;
+    border-radius: 1em;
+}
+
+main section.downloadDoGame img{
+    height: 400px;
+    margin: 5px 0px 0px 0px;
+    grid-area: imagem;
+    z-index: 2;
+    justify-self: center;
+}
+
+main section.downloadDoGame h1{
+    grid-area: titulo;
+    z-index: 2;
+    align-self: end;
+}
+
+main section.downloadDoGame p{
+    grid-area: texto;
+    margin-left: 40px;
+    z-index: 2;
+}
+
+main section.downloadDoGame a {
+    grid-area: link;
+    z-index: 2;
+    align-self: baseline;
+}
+    
+}
+
+
+
+@media only screen and (max-width: 960px){
+    header a img.apresentacao {
+        display: none;
+    }
+    header a img.futuras_atualizacoes{
+        display: none;
+    }
+    header a img.seçãoDeDownload{
+        display: none;
+    }
+    header {
+        display: grid;
+        grid-template-areas: 
+        "logo menu-hamburguer"
+        "nada opcoesDoMenu"
+        ;
+        grid-template-columns: 80%  20%;
+        height: 97px;
+
+    }
+    header a.logo{
+        width: 200px;
+    }
+    header img.menu-hbg{ 
+        display: block;
+        grid-area: menu-hamburguer;
+        height: 60px;
+        align-self: center;
+        justify-self: end;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    header div.opcoesDoMenu{ 
+        grid-area: opcoesDoMenu;
+        background-color: white;
+        height: 200px;
+        width: 120px;
+        justify-self: end;
+        display: none;
+        grid-template-areas: 
+        "apresentacao2"
+        "futuras_atualizacoes2"
+        "seçãoDeDownload2"
+        ;
+        grid-template-rows: 30% 30% 30%;
+        border: 1px solid black;
+    }
+
+    header div.opcoesDoMenu a.apresentacao{
+        grid-area: apresentacao2;
+        justify-self: center;
+        
+    }
+
+    header div.opcoesDoMenu a.futuras_atualizacoes{
+        grid-area: futuras_atualizacoes2;
+    }
+    header div.opcoesDoMenu a.seçãoDeDownload{
+        grid-area: seçãoDeDownload2;
+    }
+
+    header div.opcoesDoMenu a img.apresentacao{
+        height: 20px;
+        display: block;
+        
+        
+    }
+    header div.opcoesDoMenu a img.futuras_atualizacoes{
+        height: 30px;
+        display: block;
+       margin-right: 2px;
+    }
+    header div.opcoesDoMenu a img.seçãoDeDownload{
+        margin-left: 10px;
+        height: 30px;
+        display: block;
+       
+    }
+
+    
+}
+
+
+@media only screen and (max-width: 690px){
+    main section.secaoInicialDeApresentacao img, main section.futurasAtualizacoes img, main section.downloadDoGame img{
+        height: 50dvw;
+    }
+
+}
+
+
+
+/* MEDIA QUERY PARA MONITORES GRANDES */
+
+@media only screen and (min-width: 1700px) and (min-height:100px){
+    
+    /*---- Estilizações Gerais */
+
+    h1 {
+        font-size: 3dvw;
+    }
+
+    p{
+        font-size: 1.5dvw;
+    }
+
+    /*------ Seção de Futuras Atualizações ------- */
+    main section.futurasAtualizacoes div.listasDeAtualizações ul li{
+        font-size: 1.5dvw;
+    }
+
+    /*------ Seção de Download ------- */
+    main section.downloadDoGame{
+        margin: 40px 0px 40px 0px;
+        border-radius: 1em;
+        height: 70dvh;
+        width: 90dvw;
+        align-self: center;
+        display: grid;
+        grid-template-areas: 
+        "imagem titulo"
+        "imagem texto"
+        "imagem link"
+        ;
+        grid-template-columns: 50% 50%;
+        background-color: rgba(255, 255, 255, 0.377);
+        place-items: center;
+    
+    }
+    main section.downloadDoGame img{
+        height: 29dvw;
+        margin: 5px 0px 0px 30px;
+        grid-area: imagem;
+        z-index: 2;
+    }
+    a {
+        font-size: 1.5dvw;
+    }
+
+    /*------ Seção de Apresentação ------- */
+
+    main section.secaoInicialDeApresentacao{
+        margin: 120px 0px 40px 0px;
+        border-radius: 1em;
+        height: 70dvh;
+        width: 90dvw;
+        align-self: center;
+        display: grid;
+        grid-template-areas: 
+        "titulo imagem"
+        "apresentacao imagem"
+        ;
+        background-color: rgba(255, 255, 255, 0.377);
+        grid-template-columns: 50% 50%;
+
+    }
+
+    main section.secaoInicialDeApresentacao::before{
+        content: ''; 
+        position: absolute;
+        height: 70dvh;
+        width: 90dvw;
+        background-color: rgba(255, 255, 255, 0.377); 
+        filter: blur(5px); 
+        z-index: 2;
+        border-radius: 1em;
+    }
+    main section.secaoInicialDeApresentacao h1{
+        grid-area: titulo;
+        align-self: center;
+        justify-self: center;
+        z-index: 3;
+        margin: 0px 20px 0px 30px;
+        
+    }
+
+    main section.secaoInicialDeApresentacao p{
+        grid-area: apresentacao;
+        margin-left: 20px;
+        z-index: 3;
+    }
+    main section.secaoInicialDeApresentacao img{
+        height: 29dvw;
+        z-index: 3;
+        grid-area: imagem;
+        margin: 15px 30px 0px 10px;
+        align-self: center;
+    }
+
+
 }
